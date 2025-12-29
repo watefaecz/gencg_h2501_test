@@ -111,13 +111,37 @@ In this week, the focus was on reflecting on what I had already done and prepari
 
 ### Lesson 06 - Faces / Parametric Generators
 
-awgegawdaw
+In this week, I started to work on a parametric face generator. Because I had already worked with ChatGPT in the previous weeks, I found the process especially enjoyable, as it allowed me to generate and test my ideas much faster. Since I understand the programming language myself, I could precisely control what I wanted to change and what should stay the same, instead of relying on AI to decide everything for me. This made the collaboration feel productive rather than limiting. I used ChatGPT mainly to help refine my ideas and structure the system, while the overall concept, visual direction, and experimentation came from my own interests. The result of this process is the face generator presented here, which represents my final outcome for this topic.
+
+#### Sketch 1: Face Generator
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/0CS0X1UYN" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+*What it does:* This sketch generates an abstract, cubist-inspired face using a set of parametric rules and random values. Each time the sketch is refreshed, the proportions, positions, and shapes of facial elements such as the eyes, nose, mouth, hair, and mask change, while still maintaining a recognizable face structure. The generator works with layered geometric shapes and color planes, which creates a fragmented and painterly look inspired by cubist portraits. By pressing the space bar or clicking the mouse, a new “face variation” is generated, which changes the color palette, randomness seed, and whether outlines are drawn. This allows the sketch to produce a wide range of visually distinct faces from the same underlying system.
+
+*How to change things:* The overall appearance of the faces can be changed by editing the color palettes in the PALETTES array, which directly affects the mood and contrast of the generated portraits. The amount of variation between faces can be increased or reduced by adjusting how much randomness is applied to sizes, rotations, and positions inside the individual face-part functions. If I want the faces to look more structured, I can narrow the random ranges, whereas wider ranges lead to more abstract and distorted results. The outline behavior can be controlled through the outlines variable, which makes the faces feel either more graphic or more painterly. Additionally, by modifying or adding new shape functions for elements like eyes, hair, or masks, the generator can be expanded to create an even larger visual vocabulary.
 
 ## Week 08
 
 ### Self Study - Clock / Time 
 
-adwfawfawf
+In week 8, I finally arrived at an idea for my clock graphic that really worked for me. I started with a simple concept: an Earth in the center of the canvas, a dark space background with stars, and satellites orbiting around the planet, combined with a working digital clock. At this stage, the clock logic itself already worked, but visually the sketch still felt unfinished and quite static. After I had this basic version running, I decided to further develop it and make it more engaging. I used ChatGPT as a support tool to help me expand the idea and improve the realism and playfulness of the system, while still controlling the overall direction myself. This led to the final version, where the clock is no longer just displayed, but actively drives what happens in the scene over time.
+
+
+#### Sketch 1: Clock Graphic 
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/QvxOEfCyk" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+I created this sketch as a first working version of my clock idea, and I was already quite happy with the overall concept and structure. However, the result still felt a bit static and unfinished, as not much was happening visually over time. Because of that, I wanted to further develop the sketch and add more life and interaction to it, so that time would not only be displayed but also actively influence the scene.
+
+#### Sketch 2: Clock Graphic With Help
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/4NwhC7FTI" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+*What it does:* This sketch visualizes time through a small narrative system set in space. At its core, it shows a stylized Earth placed in the center of the canvas, surrounded by a blinking star field and multiple satellites orbiting at different speeds. The digital clock inside the Earth displays the current time, and the progression of seconds, minutes, and hours directly affects what happens in the scene. Every second, satellites move forward in their orbits and the stars subtly change, which gives the impression of a living environment. Every minute, a meteor travels through space from outside the visible area and hits the Earth, creating a colorful crater and a short particle explosion at the impact point. Every hour, all existing craters are removed again through a larger explosion effect, which resets the surface of the planet. Through these interactions, time is not only shown as numbers but translated into visible events and changes.
+
+*How to change things:* The overall behavior of the clock can be adjusted by changing how often events are triggered based on seconds, minutes, or hours. For example, meteor impacts could happen more frequently by reacting to seconds instead of minutes, or the hourly reset could be removed to allow the planet to slowly accumulate more damage over time. The visual style can be influenced by modifying the colors of the Earth, stars, satellites, and craters, which would immediately change the mood of the scene. The number of satellites, their orbit radius, and their speed ranges can also be adjusted to make the space around the planet feel calmer or more chaotic. Additionally, the particle explosion at the impact point can be made stronger or subtler by changing the number, speed, and lifetime of the particles. By tweaking these parameters, the same system can express very different interpretations of time.
+
 
 ## Week 09
 
