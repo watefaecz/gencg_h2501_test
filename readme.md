@@ -20,7 +20,7 @@ We also played the game "Sprouts" and experimented with randomized pictures on p
 
 ### Lesson 01 - Introduction & Foundations
 
-In the second week, we moved beyond static drawings and into interaction and animation. I learned how to make sketches respond to input like mouse presses and how to animate shapes by updating their coordinates over time. It was thrilling to see shapes move on their own and follow simple “physics” rules. I also learned about using conditions (if-statements) to constrain movement – for example, making sure a shape bounces back when it hits the edge of the canvas. This week made the sketches feel alive and interactive, and it showed me how a few variables and conditions can create a dynamic visual experience.
+In the second week I learned how to make sketches respond to input like mouse presses and how to animate shapes by updating their coordinates over time. It was thrilling to see shapes move on their own and follow simple “physics” rules. I also learned about using conditions (if-statements) to constrain movement – for example, making sure a shape bounces back when it hits the edge of the canvas. This week made the sketches feel alive and interactive, and it showed me how a few variables and conditions can create a dynamic visual experience.
 
 #### Sketch 1: Paint Brush 
 
@@ -45,6 +45,8 @@ How to change things: - To make the ball move faster or slower, change the value
 
 In week three, I learned about using transformations and loops to create patterns. We explored how functions like translate() and rotate() can change the coordinate system, which makes it easier to draw complex arrangements of shapes. At first, it was a bit tricky to wrap my head around the idea of moving the origin or rotating the grid, but once I practiced, I could see how powerful it is. I ended up using loops with rotation to create symmetric designs. This was the week I realized I could generate intricate patterns by repeating simple shapes with slight changes — a very exciting insight into generative design.
 
+#### Drawning 
+
 #### Sketch 1: Starburst Lines
 
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/czBR9FgVu" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
@@ -53,13 +55,19 @@ What it does: This sketch draws a starburst pattern of lines radiating out from 
 
 How to change things: - To draw more or fewer lines in the starburst, change the loop count and the rotation angle. For example, using 12 lines and rotating by PI/6 (30 degrees) would draw a 12-pointed star. - You can change the line length by adjusting the second and third parameters of the line() function (100, 0 is the endpoint of the line in the current coordinate space). - Try changing the stroke color or background color to experiment with different visual styles (for instance, stroke(255,0,0) for red lines or a dark background with white lines for a different contrast).
 
+#### Sketch 2: Isometric Cube Grid (Depth Gradient)
 
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/_7V401ulP" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+What it does: This sketch builds a grid of isometric cubes using two nested loops (rows and columns). Each cube is drawn from three quadrilateral faces (top, left, right), which creates the 3D illusion without using any 3D library. The pattern uses an offset every second row, so the cubes pack like a honeycomb instead of a boring square grid. The key part is the depth gradient: cube size gradually increases from left to right, which makes the left side look dense and the right side feel closer and bigger — similar to the reference image.
+
+How to change things: The density of the pattern can be changed by adjusting the number of rows and columns in the grid, where higher values create a denser and more compact result. The depth effect is controlled by the size interpolation of the cubes, and using more extreme values in the lerp() function increases the visual contrast between the left and right side. The overall perspective can be influenced by modifying the vertical height factor of the cubes, which makes them appear either taller and more dramatic or flatter and more subtle. The three-dimensional effect also depends strongly on the shading of the cube faces, as larger differences between the face colors result in a clearer sense of volume. Finally, the spacing between cubes is defined by the horizontal and vertical step values, where tighter spacing leads to a more compressed grid and larger spacing introduces more visual air into the composition.
 
 ## Week 04
 
-### Lesson 03 - Clock / Time
+### Lesson 03 - Noise Textures
 
-wadawffa
+Week four introduced me to Perlin noise, which is a kind of structured randomness. Unlike the random() function’s jumpy unpredictability, noise() produces smoothly changing values that are great for organic motion and textures. I was amazed at how changing a single number gradually (like time) and feeding it into noise can create gentle, natural movements or patterns. It opened my eyes to a new way of controlling randomness. This week, I tried using noise to move shapes and to generate a patterned background. The results felt much more fluid and natural compared to using pure random values.
 
 ## Week 05
 
@@ -81,7 +89,7 @@ awgegawdaw
 
 ## Week 08
 
-### Self Study
+### Self Study - Clock / Time 
 
 adwfawfawf
 
@@ -120,3 +128,10 @@ dawfgega
 ### Lesson 12 - Final Presentations & Critique
 
 gfawwadawdawd
+
+
+## Final Reflection
+
+For my journal, I used ChatGPT mainly as a support tool to help improve the clarity and structure of my written explanations. I always wrote the text myself first and then used ChatGPT to refine the wording, and I clearly referenced its use in every sketch where AI support was involved. What I really appreciated about this module was that it strongly encouraged me to work with my own code instead of relying on AI to generate everything for me. Over the weeks, I could clearly see my own progress, both in how I structured my sketches and in how confidently I experimented with generative systems.
+
+Because I had to work on Tuesday mornings, it was not always possible for me to attend every lecture in person, although I joined online whenever I could. I worked on my journal on a weekly basis and continuously built on ideas from the course. In some weeks, the topics in my journal do not directly match the exact focus of the lecture, which is because I started to follow my own interests more strongly. For example, although clocks were introduced in week 4, I became particularly interested in noise textures at that time and explored them in more depth, while I later developed my clock-based graphic during the self-study week. This approach allowed me to stay motivated and to engage more deeply with topics that genuinely interested me, while still building on the core ideas of the module.
