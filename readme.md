@@ -147,37 +147,39 @@ I created this sketch as a first working version of my clock idea, and I was alr
 
 ### Second Checkpoint
 
-awdawd
+In week 9, Guillaume gave us the opportunity to have individual face-to-face conversations about our journals. For me, most things were already clear, so I did not need specific help and instead focused on refining my graphics. During this time, I completed my face generator and further developed my clock graphic. I also talked with classmates about their projects, discussed different approaches, and exchanged ideas about challenges and solutions, which helped put my own work into a broader context.
 
 ## Week 10 
 
 ### Lesson 07 - Pixels
 
-wadwadawdawd
+By week 10 I already had some skills in creating generative graphics, so I started to experiment more freely instead of only following one strict recipe. I really enjoyed working with pixels because it feels like manipulating the raw material of an image, not just drawing shapes on top. I tried two different approaches: one where pixels become a mosaic grid, and another where pixels are transformed into a drifting distortion. Both sketches helped me understand how small pixel-level changes can completely change the feeling of an image, even when the code stays relatively simple.
 
-## Week 11
+#### Drawing of Color Gradient
 
-### Self Study - Project work
+.png
 
-dawdawdawd
+#### Sketch 1: Color Gradient
 
-## Week 12
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/PQveq8zCR" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
-### Remote - Project Work
+*What it does:* This sketch treats pixels as the main material of the image by directly assigning a color to every pixel on the canvas in each frame. The base color follows a rainbow gradient from top to bottom, while animated sine functions add horizontal and vertical motion, creating a waterfall-like flow. Because the hue values are recalculated every frame, the colors continuously change and shift across the entire image. This makes the gradient feel alive and dynamic rather than static.
 
-awdawdawd
+*How to change things:* The speed of the color changes can be adjusted by modifying the value added to t each frame, where higher values result in faster motion. The strength of the waterfall effect can be controlled by changing the multipliers of the sine functions, which affects how strongly the colors bend and ripple. If I want a calmer result, I can reduce these values, and if I want a more energetic and chaotic look, I can increase them. Mapping the hue to the horizontal position instead of the vertical one would also completely change the visual direction of the gradient.
 
-## Week 13
+#### Sketch 2: Random Pixel Drift
 
-### Lesson 11 - Final Project Workshop
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/CvRoABq63" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
-dawfgega
+*What it does:* This sketch first creates a simple base image directly in code, and then it transforms the image by shifting where each pixel reads its color from. The distortion is driven by noise, which makes the drift feel fluid instead of random static. Because the pixels are being reassigned every frame, the whole image looks like it is melting or glitching in a controlled way.
 
-## Week 14
+*How to change things:* The strength of the distortion is mainly controlled by the * 10 multiplier in dx and dy, so increasing it makes the drift stronger and more chaotic, while lowering it makes the effect subtle. The noise scale 0.01 controls the size of the distortion waves, so smaller values create big smooth warps and larger values create fine noisy jitter. If I want the motion to be slower or faster, I can change t += 0.01 to a smaller or bigger value.
 
-### Lesson 12 - Final Presentations & Critique
+## Week 11 - 14
 
-gfawwadawdawd
+### Project work
+
+In weeks 11 to 14, I mainly focused on developing my final project. In week 11, I explored different ideas and thought about what kind of project I wanted to create. Quite early on, I decided to work on a drawing machine, as I had enjoyed creating and experimenting with these systems in the earlier weeks of the course. I started with a first iteration of the project and then continued to refine and develop it over the following weeks. During this time, my focus was mostly on the project itself, while I only made smaller updates to my journal. I will describe the project work and my process in more detail in the Final Project section.
 
 ## Final Project
 
