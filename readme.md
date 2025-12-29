@@ -4,7 +4,12 @@
 
 ### Lesson 01 - Introduction & Foundations
 
-dawdadawd
+This week, I started exploring p5.js and created my first small generative graphic. Although it was simple, I felt proud because I finally understood how to control the outcome and adjust elements to make it look the way I wanted. The foundation of p5.js made sense to me, and I could visualize my ideas clearly.
+We also played the game "Sprouts" and experimented with randomized pictures on paper, which helped me think more freely about generative processes and randomness in design.
+
+#### First p5.js graphic
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/zkZ3TfS1_" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
 ## Week 02 
 
