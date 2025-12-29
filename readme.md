@@ -34,9 +34,9 @@ In the second week I learned how to make sketches respond to input like mouse pr
 
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/zkZ3TfS1_" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
-What it does: This sketch animates a single circle (ball) that bounces around the canvas. The circle starts at the center and has an initial velocity (vx, vy). On each frame, the sketch updates the ball’s position by adding the velocity to the (x, y) position. When the ball reaches a boundary of the canvas (detected by the if-statements), it inverts its velocity in that direction, causing the ball to bounce off the edges. The background is reset to black each frame, so we see a single moving ball rather than a trail. Watching the ball move and rebound gives a simple demonstration of animation and conditional logic.
+*What it does:* This sketch animates a single circle (ball) that bounces around the canvas. The circle starts at the center and has an initial velocity (vx, vy). On each frame, the sketch updates the ball’s position by adding the velocity to the (x, y) position. When the ball reaches a boundary of the canvas (detected by the if-statements), it inverts its velocity in that direction, causing the ball to bounce off the edges. The background is reset to black each frame, so we see a single moving ball rather than a trail. Watching the ball move and rebound gives a simple demonstration of animation and conditional logic.
 
-How to change things: - To make the ball move faster or slower, change the values of vx and vy. For example, setting them to 5 or 1 will change the speed noticeably. - You can start the ball at a different position by changing the initial x and y values in the code (for instance, start at a corner by setting x = 0, y = 0). - To have multiple balls bouncing, you could duplicate the variables for another ball (like x2, y2, vx2, vy2) and add another circle() and update logic in draw() for the second ball.
+*How to change things:* To make the ball move faster or slower, change the values of vx and vy. For example, setting them to 5 or 1 will change the speed noticeably. - You can start the ball at a different position by changing the initial x and y values in the code (for instance, start at a corner by setting x = 0, y = 0). - To have multiple balls bouncing, you could duplicate the variables for another ball (like x2, y2, vx2, vy2) and add another circle() and update logic in draw() for the second ball.
 
 
 ## Week 03
@@ -51,17 +51,17 @@ In week three, I learned about using transformations and loops to create pattern
 
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/czBR9FgVu" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
-What it does: This sketch draws a starburst pattern of lines radiating out from the center of the canvas. By using translate(width/2, height/2), it moves the origin to the center. Then a loop draws 8 lines; after each line, the canvas is rotated by 45 degrees (PI/4 radians) before drawing the next one. The result is 8 equally spaced lines forming a star or wheel shape. Since all the drawing is done in setup() and draw() is empty, this pattern is static. It demonstrates how loop + rotate can generate symmetric designs very easily.
+*What it does:* This sketch draws a starburst pattern of lines radiating out from the center of the canvas. By using translate(width/2, height/2), it moves the origin to the center. Then a loop draws 8 lines; after each line, the canvas is rotated by 45 degrees (PI/4 radians) before drawing the next one. The result is 8 equally spaced lines forming a star or wheel shape. Since all the drawing is done in setup() and draw() is empty, this pattern is static. It demonstrates how loop + rotate can generate symmetric designs very easily.
 
-How to change things: - To draw more or fewer lines in the starburst, change the loop count and the rotation angle. For example, using 12 lines and rotating by PI/6 (30 degrees) would draw a 12-pointed star. - You can change the line length by adjusting the second and third parameters of the line() function (100, 0 is the endpoint of the line in the current coordinate space). - Try changing the stroke color or background color to experiment with different visual styles (for instance, stroke(255,0,0) for red lines or a dark background with white lines for a different contrast).
+*How to change things:* To draw more or fewer lines in the starburst, change the loop count and the rotation angle. For example, using 12 lines and rotating by PI/6 (30 degrees) would draw a 12-pointed star. - You can change the line length by adjusting the second and third parameters of the line() function (100, 0 is the endpoint of the line in the current coordinate space). - Try changing the stroke color or background color to experiment with different visual styles (for instance, stroke(255,0,0) for red lines or a dark background with white lines for a different contrast).
 
 #### Sketch 2: Isometric Cube Grid (Depth Gradient)
 
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/_7V401ulP" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
-What it does: This sketch builds a grid of isometric cubes using two nested loops (rows and columns). Each cube is drawn from three quadrilateral faces (top, left, right), which creates the 3D illusion without using any 3D library. The pattern uses an offset every second row, so the cubes pack like a honeycomb instead of a boring square grid. The key part is the depth gradient: cube size gradually increases from left to right, which makes the left side look dense and the right side feel closer and bigger — similar to the reference image.
+*What it does:* This sketch builds a grid of isometric cubes using two nested loops (rows and columns). Each cube is drawn from three quadrilateral faces (top, left, right), which creates the 3D illusion without using any 3D library. The pattern uses an offset every second row, so the cubes pack like a honeycomb instead of a boring square grid. The key part is the depth gradient: cube size gradually increases from left to right, which makes the left side look dense and the right side feel closer and bigger — similar to the reference image.
 
-How to change things: The density of the pattern can be changed by adjusting the number of rows and columns in the grid, where higher values create a denser and more compact result. The depth effect is controlled by the size interpolation of the cubes, and using more extreme values in the lerp() function increases the visual contrast between the left and right side. The overall perspective can be influenced by modifying the vertical height factor of the cubes, which makes them appear either taller and more dramatic or flatter and more subtle. The three-dimensional effect also depends strongly on the shading of the cube faces, as larger differences between the face colors result in a clearer sense of volume. Finally, the spacing between cubes is defined by the horizontal and vertical step values, where tighter spacing leads to a more compressed grid and larger spacing introduces more visual air into the composition.
+*How to change things:* The density of the pattern can be changed by adjusting the number of rows and columns in the grid, where higher values create a denser and more compact result. The depth effect is controlled by the size interpolation of the cubes, and using more extreme values in the lerp() function increases the visual contrast between the left and right side. The overall perspective can be influenced by modifying the vertical height factor of the cubes, which makes them appear either taller and more dramatic or flatter and more subtle. The three-dimensional effect also depends strongly on the shading of the cube faces, as larger differences between the face colors result in a clearer sense of volume. Finally, the spacing between cubes is defined by the horizontal and vertical step values, where tighter spacing leads to a more compressed grid and larger spacing introduces more visual air into the composition.
 
 ## Week 04
 
@@ -69,17 +69,43 @@ How to change things: The density of the pattern can be changed by adjusting the
 
 Week four introduced me to Perlin noise, which is a kind of structured randomness. Unlike the random() function’s jumpy unpredictability, noise() produces smoothly changing values that are great for organic motion and textures. I was amazed at how changing a single number gradually (like time) and feeding it into noise can create gentle, natural movements or patterns. It opened my eyes to a new way of controlling randomness. This week, I tried using noise to move shapes and to generate a patterned background. The results felt much more fluid and natural compared to using pure random values.
 
+#### Sketch 1: Noise Motion
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/p8Ce9X1gH" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+*What it does:* This sketch uses Perlin noise to move a circle around smoothly. The variables x and y are set by calling noise() with a changing parameter t (and t+100 for y to ensure they use different noise sequences). The values noise() returns are between 0 and 1, so multiplying by width or height gives a position on the canvas. As t increases slowly, x and y wander in a smooth, leisurely way rather than jumping randomly. The background is drawn with a translucent black each frame (background(0, 20) uses an alpha value of 20 out of 255), which causes old frames to fade rather than instantly clearing. This creates a fading trail effect behind the moving circle. The overall impression is of a white orb drifting fluidly around in a dark space.
+
+*How to change things:* - Adjust the speed of movement by changing the increment to t. A larger step (like t += 0.05) will make the motion less smooth and faster, while a smaller step will slow it down further. - The trail effect can be controlled by the second parameter in background(). Using a lower alpha (closer to 0) will make the trail last longer (more persistence), whereas a higher alpha (closer to 255) will make the trail shorter or even no trail at all if you use background(0) fully opaque. - To explore different paths, you can change the offsets added to t for x and y. Right now, y uses t+100 which is an arbitrary offset into the noise space; using different offsets (or even using one noise dimension for both x and y but with a phase shift) can create looping or diagonal motions.
+
+#### Sketch 2: Random Noise Grid
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/L-yfzTyAV" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+*What it does:* This sketch generates a static textured pattern using 2D Perlin noise. It divides the canvas into a grid of 10x10 pixel cells. For each cell at position (x, y), it calculates a noise value c based on the x and y coordinates (scaled down by a factor of 0.02 to make the noise vary slowly across the canvas). The noise output (0 to 1) is multiplied by 255 to get a grayscale color value. Each cell is then drawn as a rectangle filled with that gray value. The result is an organic-looking cloudy texture across the canvas – areas of light and dark blend smoothly into each other, unlike a random checkerboard. It almost looks like a topographic height map or a cloudy sky in black and white.
+
+*How to change things:* Changing the scale of the noise (the 0.02 factor) will change how smooth or detailed the texture is. A smaller factor (e.g. 0.005) will make very large, slow gradients (bigger blotches of light and dark), while a larger factor (e.g. 0.1) makes the pattern more tightly varied (smaller noise details). - You can use color instead of grayscale by taking separate noise values for different color channels. For example, you could do fill(noise(x*0.02, y*0.02)*255, noise(x*0.02, y*0.02, 100)*255, 150) to add some color variation. - Try using noise in the draw() loop to continuously change the texture over time (you’d use a third parameter in noise for time). This would create a slowly shifting pattern, like evolving clouds, though it will be more computationally intensive to update every frame.
+
 ## Week 05
 
 ### Lesson 04 - Drawing Machines
 
-awdafawdawdad
+In this week I focused on building a drawing machine instead of generating a finished picture immediately. I wanted a tool that reacts to my input but still has its own “personality”, so the output feels partly controlled and partly surprising. I experimented with different brush behaviors, like stamping shapes, rotating them based on movement direction, and adding small variations through randomness. Compared to earlier weeks, this felt like a step forward because I wasn’t just drawing a static pattern anymore — I was building a system that can create many different results depending on how I use it.
+
+At first, I worked with a very simple drawing machine that I had already developed earlier in the course, where it could only stamp a single shape and only varied in brush size while drawing. I liked this approach a lot and therefore decided to continue working with it and improve it further in this week. To do so, I used ChatGPT to help me upgrade my drawing machine from week 2 and explore ways of making it more interesting and expressive, especially by turning it into a more dynamic and responsive system rather than a static stamp. I still defined the idea and the core behavior myself, but I used ChatGPT to support the refinement of the system
+
+#### Sketch 1: Drawing Machine With Help
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/OQyHBfukB" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+*What it does:* This sketch turns the mouse into a drawing machine that stamps shapes along my movement path. While I paint, the brush size constantly varies between 0.5 and 3, which makes the stroke feel more organic and less repetitive. Every time I click the mouse, the stamp shape changes, so I can switch styles while staying inside the same system. The stamps also rotate based on the direction of my movement, which makes the output feel more dynamic and “mechanical” instead of static.
+
+*How to change things:* If I want denser or lighter drawing, I can change the step calculation int(d / 6) to a smaller or larger value, because that controls how many stamps are placed between mouse positions. I can make the brush size calmer or more chaotic by editing random(0.5, 3.0) to a narrower or wider range. If I want the shapes to change more or less often, I can adjust how many modes exist by changing % 5 and adding or removing stamp cases inside the stamp() function. I can also change the overall mood by shifting the color behavior in hueBase or by increasing the alpha value if I want stronger strokes.
 
 ## Week 06
 
 ### Lesson 05 - Reflection / Collect / Prepare
 
-wadgawdawda
+In this week, the focus was on reflecting on what I had already done and preparing for the upcoming lectures. I went through my sketches from the previous weeks and tried to improve them by cleaning up the visuals and refining some of the ideas. I also talked with classmates and looked at what they were working on, which helped me see different approaches and gave me new perspectives on my own work. During this week, I started experimenting with a clock graphic, but I did not yet arrive at a result that felt useful or convincing. I therefore decided to pause this idea and continue working on it later, which eventually allowed me to develop it further during the self-study week, when I had more time and a clearer concept.
 
 ## Week 07
 
@@ -128,6 +154,16 @@ dawfgega
 ### Lesson 12 - Final Presentations & Critique
 
 gfawwadawdawd
+
+## Final Project
+
+### Idea
+
+### Failures / Excursions
+
+### Final Graphic
+
+### Project Reflection
 
 
 ## Final Reflection
