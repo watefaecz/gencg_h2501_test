@@ -96,8 +96,7 @@ In week three, I learned how loops and transformations can create patterns. I ex
 - Different look: change stroke/background colors.
 - Different lengths: change the line end coordinates.
 
-**Failure** 
-
+### Failure / Excursion 
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/hEFdOCVFB" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
 I moved the origin to a corner-ish position and drew each line from an offset start point instead of (0,0), plus I changed the rotation step from PI/4 to PI/6. This makes the “burst” fail because the lines no longer converge in the center and the angles don’t evenly distribute, so it looks like a weird off-center spiral rather than a symmetric starburst.
 
@@ -239,6 +238,10 @@ It was helpful to pause and review. I noticed that I prefer systems that are int
 ### Exploration
 This week I worked on a **parametric face generator**. Because I already had experience working with ChatGPT from earlier weeks, I could test ideas faster. Since I understand the code myself, I could decide precisely what to change and what should stay fixed. I used ChatGPT mainly to support structure and refinement, while the concept and experimentation came from my own interests.
 
+#### Failure / Excursion
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/nPgPYhxVR" width="100%" height="800" frameborder="no"></iframe> {% endraw %}
+I rotated and misplaced the facial components (mask, planes, nose, mouth, neck) much more aggressively, and I redesigned the eyes with extreme squashing plus drifting pupils and mismatched geometry. This causes the piece to “fail” as a readable cubist face because the features no longer align like a portrait and the eyes become distorted symbols rather than believable facial anchors.
+
 #### Sketch 1: Face Generator
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/0CS0X1UYN" width="100%" height="800" frameborder="no"></iframe> {% endraw %}
 
@@ -283,7 +286,6 @@ In week 8, I developed my clock concept further. I wanted to combine something I
 
 #### Failure / Excursion
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/jkBQXY5LO" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
-
 I set the satellite orbit radius to be smaller than the Earth radius (so they fly “inside” the planet) and I changed the clock timezone from Europe/Zurich to UTC. This fails because the satellites no longer clearly orbit around Earth and the displayed time is not Zurich time, even though the scene still looks like an Earth clock.
 
 
