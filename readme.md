@@ -9,12 +9,6 @@ This week, I started exploring p5.js and created my first small generative graph
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/wQgYe9mHZ" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
 
 
-We also played the game *Sprouts* and experimented with randomized pictures on paper, which helped me think more freely about generative processes and randomness in design.
-
-#### Sprouts Game
-picture of Sproutss Game
-
-
 ### References
 This was my starting point, so I did not use a specific reference yet. I focused on understanding the basics and building confidence.
 
