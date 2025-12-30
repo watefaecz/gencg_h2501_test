@@ -109,7 +109,7 @@ I moved the origin to a corner-ish position and drew each line from an offset st
 ### Isometric Cubes
 
 #### Rough Sketch
-<img src=„images/IsometricCubesDrawing.jpeg“ >
+<img src=„images/IsometricCubesDrawing.jpeg“>
 
 #### Sketch 2: Isometric Cube Grid (Depth Gradient)
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/_7V401ulP" width="80%" height="600" frameborder="no"></iframe> {% endraw %}
