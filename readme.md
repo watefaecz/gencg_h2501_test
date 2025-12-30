@@ -31,7 +31,7 @@ I liked that p5.js felt approachable. Even small changes in values immediately c
 
 
 
-## Week 02 — Lesson 02: Interaction & Motion
+## Week 02 — Lesson 01: Interaction & Foundations
 
 ### Exploration
 In the second week I learned how to make sketches respond to input like mouse presses and how to animate shapes by updating coordinates over time. It was exciting to see shapes move on their own and follow simple rules. I also worked with conditions (if-statements), for example to make an object bounce when it hits the edge of the canvas.
@@ -75,7 +75,9 @@ My main “reference” this week was my own experimentation: trying to recreate
 ### Reflection
 This week made the sketches feel alive. I realized that interactivity changes the whole experience, because I am not only looking at an image — I am controlling a system. I also learned that a few simple conditions can create convincing behavior.
 
-## Week 03 — Lesson 03: Grids & Iterative Patterns
+
+
+## Week 03 — Lesson 02: Grids & Iterative Patterns
 
 In week three, I learned how loops and transformations can create patterns. I explored how `translate()` and `rotate()` change the coordinate system, which makes it easier to build complex arrangements. Once I understood that the origin can move and the canvas can rotate, it became much easier to design structured patterns.
 
@@ -109,8 +111,7 @@ In week three, I learned how loops and transformations can create patterns. I ex
 - 3D illusion: increase/decrease shading contrast between faces.
 
 ### References
-This was the first week where I actively looked at pattern references to guide the visual direction. Possible references that fit this week (you can choose 1–2 to cite):
-- **Vera Molnár** — grid-based variation and rule-driven repetition  
+This was the first week where I actively looked at pattern references to guide the visual direction.
 - **Sol LeWitt** — systematic drawings and simple instruction sets  
 - **M. C. Escher** — tiling/tessellation thinking (for structured repetition)  
 - **Victor Vasarely / Op Art** — optical rhythm through repetition
@@ -127,161 +128,310 @@ This was the first week where I actively looked at pattern references to guide t
 This week was a big step for me because I saw how quickly complexity can grow from simple rules. I also noticed that the hardest part is controlling variation: too much randomness looks chaotic, but small structured changes look intentional.
 
 
-## Week 04
 
-### Lesson 03 - Noise Textures
+## Week 04 — Lesson 03: Noise Textures
 
-Week four introduced me to Perlin noise, which is a kind of structured randomness. Unlike the random() function’s jumpy unpredictability, noise() produces smoothly changing values that are great for organic motion and textures. I was amazed at how changing a single number gradually (like time) and feeding it into noise can create gentle, natural movements or patterns. It opened my eyes to a new way of controlling randomness. This week, I tried using noise to move shapes and to generate a patterned background. The results felt much more fluid and natural compared to using pure random values.
+### Exploration
+Week four introduced me to **Perlin noise**, which felt like “structured randomness.” Unlike `random()`, noise changes smoothly, which makes it useful for organic motion and textures. I experimented with noise-driven movement and a static noise grid texture.
 
 #### Sketch 1: Noise Motion
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/p8Ce9X1gH" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
 
-*What it does:* This sketch uses Perlin noise to move a circle around smoothly. The variables x and y are set by calling noise() with a changing parameter t (and t+100 for y to ensure they use different noise sequences). The values noise() returns are between 0 and 1, so multiplying by width or height gives a position on the canvas. As t increases slowly, x and y wander in a smooth, leisurely way rather than jumping randomly. The background is drawn with a translucent black each frame (background(0, 20) uses an alpha value of 20 out of 255), which causes old frames to fade rather than instantly clearing. This creates a fading trail effect behind the moving circle. The overall impression is of a white orb drifting fluidly around in a dark space.
+**What it does**
+- Uses `noise(t)` and `noise(t+100)` to generate x/y positions.
+- Increases `t` slowly so motion stays smooth.
+- Uses a transparent background to create fading trails.
 
-*How to change things:* - Adjust the speed of movement by changing the increment to t. A larger step (like t += 0.05) will make the motion less smooth and faster, while a smaller step will slow it down further. - The trail effect can be controlled by the second parameter in background(). Using a lower alpha (closer to 0) will make the trail last longer (more persistence), whereas a higher alpha (closer to 255) will make the trail shorter or even no trail at all if you use background(0) fully opaque. - To explore different paths, you can change the offsets added to t for x and y. Right now, y uses t+100 which is an arbitrary offset into the noise space; using different offsets (or even using one noise dimension for both x and y but with a phase shift) can create looping or diagonal motions.
+**How to change things**
+- Motion speed: change how fast `t` increases.
+- Trail length: change the alpha value in background.
+- Different paths: change noise offsets (like `t+200`).
 
 #### Sketch 2: Random Noise Grid
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/L-yfzTyAV" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
 
-*What it does:* This sketch generates a static textured pattern using 2D Perlin noise. It divides the canvas into a grid of 10x10 pixel cells. For each cell at position (x, y), it calculates a noise value c based on the x and y coordinates (scaled down by a factor of 0.02 to make the noise vary slowly across the canvas). The noise output (0 to 1) is multiplied by 255 to get a grayscale color value. Each cell is then drawn as a rectangle filled with that gray value. The result is an organic-looking cloudy texture across the canvas – areas of light and dark blend smoothly into each other, unlike a random checkerboard. It almost looks like a topographic height map or a cloudy sky in black and white.
+**What it does**
+- Divides the canvas into small rectangles.
+- Each cell gets a grayscale value from 2D noise.
+- The result looks cloudy and organic instead of random static.
 
-*How to change things:* Changing the scale of the noise (the 0.02 factor) will change how smooth or detailed the texture is. A smaller factor (e.g. 0.005) will make very large, slow gradients (bigger blotches of light and dark), while a larger factor (e.g. 0.1) makes the pattern more tightly varied (smaller noise details). - You can use color instead of grayscale by taking separate noise values for different color channels. For example, you could do fill(noise(x*0.02, y*0.02)*255, noise(x*0.02, y*0.02, 100)*255, 150) to add some color variation. - Try using noise in the draw() loop to continuously change the texture over time (you’d use a third parameter in noise for time). This would create a slowly shifting pattern, like evolving clouds, though it will be more computationally intensive to update every frame.
+**How to change things**
+- Detail scale: change the noise multiplier (0.02).
+- Color noise: map different noise values to RGB/HSB.
+- Animated noise: add a time dimension in noise and update in `draw()`.
 
-## Week 05
+### References
+- **Daniel Shiffman (The Coding Train)** — tutorials/examples using noise for motion/texture
+- **Sarah Ridgley**
 
-### Lesson 04 - Drawing Machines
+### Reflection
+Noise felt like a “control upgrade” for randomness. The output looked more natural without me drawing anything by hand. I also learned that tiny parameter changes (like noise scale or t step) completely change the final feeling.
 
-In this week I focused on building a drawing machine instead of generating a finished picture immediately. I wanted a tool that reacts to my input but still has its own “personality”, so the output feels partly controlled and partly surprising. I experimented with different brush behaviors, like stamping shapes, rotating them based on movement direction, and adding small variations through randomness. Compared to earlier weeks, this felt like a step forward because I wasn’t just drawing a static pattern anymore — I was building a system that can create many different results depending on how I use it.
 
-At first, I worked with a very simple drawing machine that I had already developed earlier in the course, where it could only stamp a single shape and only varied in brush size while drawing. I liked this approach a lot and therefore decided to continue working with it and improve it further in this week. To do so, I used ChatGPT to help me upgrade my drawing machine from week 2 and explore ways of making it more interesting and expressive, especially by turning it into a more dynamic and responsive system rather than a static stamp. I still defined the idea and the core behavior myself, but I used ChatGPT to support the refinement of the system
+
+## Week 05 — Lesson 04: Drawing Machines
+
+### Exploration
+This week I focused on building a **drawing machine** instead of generating one finished picture. I wanted a tool that reacts to my input but still has its own “personality,” so the output feels partly controlled and partly surprising.
+
+I started from a simpler drawing approach I developed earlier (especially the brush idea from week 2). I liked it a lot, so I continued improving it by experimenting with stamping behaviors, rotation, and small variations through randomness. I also used ChatGPT as a support tool to refine and upgrade parts of the system (structure and implementation), while the concept and direction stayed mine.
 
 #### Sketch 1: Drawing Machine With Help
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/OQyHBfukB" width="120%" height="700" frameborder="no"></iframe> {% endraw %}
 
-*What it does:* This sketch turns the mouse into a drawing machine that stamps shapes along my movement path. While I paint, the brush size constantly varies between 0.5 and 3, which makes the stroke feel more organic and less repetitive. Every time I click the mouse, the stamp shape changes, so I can switch styles while staying inside the same system. The stamps also rotate based on the direction of my movement, which makes the output feel more dynamic and “mechanical” instead of static.
+**What it does**
+- Stamps shapes along the mouse movement path.
+- Brush size varies, making the output less repetitive.
+- Click changes the stamp shape (different modes).
+- Rotation follows movement direction, making it feel more mechanical/dynamic.
 
-*How to change things:* If I want denser or lighter drawing, I can change the step calculation int(d / 6) to a smaller or larger value, because that controls how many stamps are placed between mouse positions. I can make the brush size calmer or more chaotic by editing random(0.5, 3.0) to a narrower or wider range. If I want the shapes to change more or less often, I can adjust how many modes exist by changing % 5 and adding or removing stamp cases inside the stamp() function. I can also change the overall mood by shifting the color behavior in hueBase or by increasing the alpha value if I want stronger strokes.
+**How to change things**
+- Stamp density: adjust the step calculation.
+- Calm vs chaotic: adjust the brush size random range.
+- More/less modes: change the number of stamp cases.
+- Mood: adjust hue behavior and alpha.
 
-## Week 06
+### References
+This week is strongly connected to “machines that draw.” 
+- **Jean Tinguely** — mechanical drawing machines
+- **Sougwen Chung**
+- **Harold Cohen (AARON)** — rule-based drawing as a system
 
-### Lesson 05 - Reflection / Collect / Prepare
+### Algorithmic Thinking
+- The system is not “one image,” but a generator:
+  - input = mouse movement
+  - rule = stamp every N pixels, rotate by direction, vary size
+  - output = a unique drawing depending on how I move
+- Parameters become artistic controls:
+  - density, rotation sensitivity, shape set, color logic
+ 
+### Reflection
+I enjoyed this week a lot because it felt like I was designing a creative tool. I also noticed that “interesting” often comes from constraints: when I limit shapes or palettes, the system feels more intentional. This week also connected well to my later final project idea.
 
-In this week, the focus was on reflecting on what I had already done and preparing for the upcoming lectures. I went through my sketches from the previous weeks and tried to improve them by cleaning up the visuals and refining some of the ideas. I also talked with classmates and looked at what they were working on, which helped me see different approaches and gave me new perspectives on my own work. During this week, I started experimenting with a clock graphic, but I did not yet arrive at a result that felt useful or convincing. I therefore decided to pause this idea and continue working on it later, which eventually allowed me to develop it further during the self-study week, when I had more time and a clearer concept.
 
-## Week 07
 
-### Lesson 06 - Faces / Parametric Generators
+## Week 06 — Lesson 05: Reflection / Collect / Prepare
 
-In this week, I started to work on a parametric face generator. Because I had already worked with ChatGPT in the previous weeks, I found the process especially enjoyable, as it allowed me to generate and test my ideas much faster. Since I understand the programming language myself, I could precisely control what I wanted to change and what should stay the same, instead of relying on AI to decide everything for me. This made the collaboration feel productive rather than limiting. I used ChatGPT mainly to help refine my ideas and structure the system, while the overall concept, visual direction, and experimentation came from my own interests. The result of this process is the face generator presented here, which represents my final outcome for this topic.
+### Exploration
+This week I focused on reviewing what I had already done and preparing for upcoming work. I looked through older sketches and tried small improvements (cleaning visuals and refining ideas). I also compared my work with classmates’ approaches, which gave me new perspectives.
+
+### References
+No new specific references this week — the focus was mainly on collecting, reviewing, and preparing.
+
+### Reflection
+It was helpful to pause and review. I noticed that I prefer systems that are interactive or that produce variety from one set of rules. I also started thinking about a clock-based sketch but decided to pause the idea until I had a clearer concept.
+
+
+
+## Week 07 — Lesson 06: Faces / Parametric Generators
+
+### Exploration
+This week I worked on a **parametric face generator**. Because I already had experience working with ChatGPT from earlier weeks, I could test ideas faster. Since I understand the code myself, I could decide precisely what to change and what should stay fixed. I used ChatGPT mainly to support structure and refinement, while the concept and experimentation came from my own interests.
 
 #### Sketch 1: Face Generator
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/0CS0X1UYN" width="100%" height="800" frameborder="no"></iframe> {% endraw %}
 
-*What it does:* This sketch generates an abstract, cubist-inspired face using a set of parametric rules and random values. Each time the sketch is refreshed, the proportions, positions, and shapes of facial elements such as the eyes, nose, mouth, hair, and mask change, while still maintaining a recognizable face structure. The generator works with layered geometric shapes and color planes, which creates a fragmented and painterly look inspired by cubist portraits. By pressing the space bar or clicking the mouse, a new “face variation” is generated, which changes the color palette, randomness seed, and whether outlines are drawn. This allows the sketch to produce a wide range of visually distinct faces from the same underlying system.
+**What it does**
+- Generates an abstract face from layered shapes and parameters.
+- Pressing space/click regenerates a new variation (new randomness seed / palette / outlines).
+- The face stays recognizable because key elements follow rules, even though details vary.
 
-*How to change things:* The overall appearance of the faces can be changed by editing the color palettes in the PALETTES array, which directly affects the mood and contrast of the generated portraits. The amount of variation between faces can be increased or reduced by adjusting how much randomness is applied to sizes, rotations, and positions inside the individual face-part functions. If I want the faces to look more structured, I can narrow the random ranges, whereas wider ranges lead to more abstract and distorted results. The outline behavior can be controlled through the outlines variable, which makes the faces feel either more graphic or more painterly. Additionally, by modifying or adding new shape functions for elements like eyes, hair, or masks, the generator can be expanded to create an even larger visual vocabulary.
+**How to change things**
+- Mood: edit palettes in `PALETTES`.
+- More/less abstraction: adjust random ranges for size/rotation/position.
+- Style: toggle outlines or change stroke weight.
+- Expand vocabulary: add new shapes for eyes/hair/masks.
 
-## Week 08
+### References
+For this week, the visual direction is connected to cubist portrait styles. Possible references to cite:
+- **Pablo Picasso** — cubist faces and fragmented portrait planes
+- **Georges Braque** — early cubism and simplified facial structures
 
-### Self Study - Clock / Time 
+### Algorithmic Thinking
+- “Generator rules”:
+  - define a face bounding area
+  - place facial features relative to that area
+  - randomize within controlled ranges
+  - keep constraints so the output still reads as a face
+- This is a balance between:
+  - fixed structure (face anatomy)
+  - variable parameters (shape, palette, distortion)
 
-In week 8, I finally arrived at an idea for my clock graphic that really worked for me. I started with a simple concept: an Earth in the center of the canvas, a dark space background with stars, and satellites orbiting around the planet, combined with a working digital clock. At this stage, the clock logic itself already worked, but visually the sketch still felt unfinished and quite static. After I had this basic version running, I decided to further develop it and make it more engaging. I used ChatGPT as a support tool to help me expand the idea and improve the realism and playfulness of the system, while still controlling the overall direction myself. This led to the final version, where the clock is no longer just displayed, but actively drives what happens in the scene over time.
+### Reflection
+I liked that one sketch can produce many outcomes. It made me think more like a designer of systems rather than a maker of single images. The challenge was making variation feel intentional, not just random, so I tried to keep strong structural rules.
 
+
+
+## Week 08 — Self Study: Clock / Time
+
+### Exploration
+In week 8, I developed my clock concept further. I wanted to combine something I personally like (space themes) with the idea of time. I started with Earth in the center, a star background, satellites, and a working digital clock. After the first version worked logically, I upgraded the sketch so time is not only shown, but also drives events in the scene over time. I used ChatGPT as a support tool to help me expand the idea and improve the realism and playfulness of the system, while still controlling the overall direction myself. This led to the final version, where the clock is no longer just displayed, but actively drives what happens in the scene over time.
 
 #### Sketch 1: Clock Graphic 
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/QvxOEfCyk" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
 
 I created this sketch as a first working version of my clock idea, and I was already quite happy with the overall concept and structure. However, the result still felt a bit static and unfinished, as not much was happening visually over time. Because of that, I wanted to further develop the sketch and add more life and interaction to it, so that time would not only be displayed but also actively influence the scene.
 
 #### Sketch 2: Clock Graphic With Help
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/4NwhC7FTI" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
 
-*What it does:* This sketch visualizes time through a small narrative system set in space. At its core, it shows a stylized Earth placed in the center of the canvas, surrounded by a blinking star field and multiple satellites orbiting at different speeds. The digital clock inside the Earth displays the current time, and the progression of seconds, minutes, and hours directly affects what happens in the scene. Every second, satellites move forward in their orbits and the stars subtly change, which gives the impression of a living environment. Every minute, a meteor travels through space from outside the visible area and hits the Earth, creating a colorful crater and a short particle explosion at the impact point. Every hour, all existing craters are removed again through a larger explosion effect, which resets the surface of the planet. Through these interactions, time is not only shown as numbers but translated into visible events and changes.
+**What it does**
+- The clock is integrated into the scene (inside the Earth).
+- Seconds/minutes/hours trigger different events:
+  - satellites orbit continuously
+  - minute = meteor impact + crater + particle burst
+  - hour = reset craters with a bigger explosion
+- Time becomes visible through changes, not only numbers.
 
-*How to change things:* The overall behavior of the clock can be adjusted by changing how often events are triggered based on seconds, minutes, or hours. For example, meteor impacts could happen more frequently by reacting to seconds instead of minutes, or the hourly reset could be removed to allow the planet to slowly accumulate more damage over time. The visual style can be influenced by modifying the colors of the Earth, stars, satellites, and craters, which would immediately change the mood of the scene. The number of satellites, their orbit radius, and their speed ranges can also be adjusted to make the space around the planet feel calmer or more chaotic. Additionally, the particle explosion at the impact point can be made stronger or subtler by changing the number, speed, and lifetime of the particles. By tweaking these parameters, the same system can express very different interpretations of time.
+**How to change things**
+- Frequency: trigger events on seconds instead of minutes.
+- Persistence: remove the hourly reset so craters accumulate.
+- Mood: change colors for stars, Earth, satellites, craters.
+- Complexity: adjust number/speed of satellites and particles.
+
+### References
+I did not follow one specific artwork here. The main idea came from my own interests (space).
+
+### Algorithmic Thinking
+- Map real time → visual events:
+  - if second changes → update movement and small changes
+  - if minute changes → create a new meteor event
+  - if hour changes → clear and reset a state (craters)
+- State is important:
+  - craters are stored and updated over time
+  - the scene “remembers” past events
+
+### Reflection
+This sketch helped me understand that time-based systems are more interesting when they have memory and consequences. I liked that the clock became part of a small narrative system instead of a simple display.
 
 
-## Week 09
 
-### Second Checkpoint
+## Week 09 — Second Checkpoint
 
-In week 9, Guillaume gave us the opportunity to have individual face-to-face conversations about our journals. For me, most things were already clear, so I did not need specific help and instead focused on refining my graphics. During this time, I completed my face generator and further developed my clock graphic. I also talked with classmates about their projects, discussed different approaches, and exchanged ideas about challenges and solutions, which helped put my own work into a broader context.
+### Exploration
+In week 9, we had individual conversations about our journals. I used the time mainly to refine my graphics. During this time, I completed my face generator and further developed my clock graphic. I also exchanged ideas with classmates about challenges and solutions.
 
-## Week 10 
+### References
+No new references this week — the focus was on feedback and refinement.
 
-### Lesson 07 - Pixels
+### Algorithmic Thinking
+- Refinement work is often:
+  - debugging systems
+  - tightening parameter ranges
+  - cleaning visual composition
+  - making the code more readable for iteration
+ 
+### Reflection
+This checkpoint helped me see that my journal is strongest when I document decisions and changes clearly. It also motivated me to keep polishing my sketches, not only creating new ones.
 
-By week 10 I already had some skills in creating generative graphics, so I started to experiment more freely instead of only following one strict recipe. I really enjoyed working with pixels because it feels like manipulating the raw material of an image, not just drawing shapes on top. I tried two different approaches: one where pixels become a mosaic grid, and another where pixels are transformed into a drifting distortion. Both sketches helped me understand how small pixel-level changes can completely change the feeling of an image, even when the code stays relatively simple.
+## Week 10 — Lesson 07: Pixels
+
+### Exploration
+By week 10 I felt more confident and started experimenting more freely. I really enjoyed working with pixels because it feels like manipulating the raw material of an image, not just drawing shapes on top. I tried two approaches: a flowing color gradient and a pixel drift distortion.
 
 #### Drawing of Color Gradient
-
 .png
 
 #### Sketch 1: Color Gradient
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/PQveq8zCR" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
-*What it does:* This sketch treats pixels as the main material of the image by directly assigning a color to every pixel on the canvas in each frame. The base color follows a rainbow gradient from top to bottom, while animated sine functions add horizontal and vertical motion, creating a waterfall-like flow. Because the hue values are recalculated every frame, the colors continuously change and shift across the entire image. This makes the gradient feel alive and dynamic rather than static.
+**What it does**
+- Sets every pixel color directly (pixel-level image generation).
+- Hue follows a gradient, animated by sine functions.
+- The whole image continuously shifts like a flowing waterfall.
 
-*How to change things:* The speed of the color changes can be adjusted by modifying the value added to t each frame, where higher values result in faster motion. The strength of the waterfall effect can be controlled by changing the multipliers of the sine functions, which affects how strongly the colors bend and ripple. If I want a calmer result, I can reduce these values, and if I want a more energetic and chaotic look, I can increase them. Mapping the hue to the horizontal position instead of the vertical one would also completely change the visual direction of the gradient.
+**How to change things**
+- Speed: change how fast `t` increases.
+- Strength: change sine multipliers.
+- Direction: map hue to x instead of y.
 
 #### Sketch 2: Random Pixel Drift
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/CvRoABq63" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
-*What it does:* This sketch first creates a simple base image directly in code, and then it transforms the image by shifting where each pixel reads its color from. The distortion is driven by noise, which makes the drift feel fluid instead of random static. Because the pixels are being reassigned every frame, the whole image looks like it is melting or glitching in a controlled way.
+**What it does**
+- Creates a base image in code.
+- Reassigns pixel colors by shifting sampling coordinates.
+- Noise drives the drift so it feels fluid, not jittery.
 
-*How to change things:* The strength of the distortion is mainly controlled by the * 10 multiplier in dx and dy, so increasing it makes the drift stronger and more chaotic, while lowering it makes the effect subtle. The noise scale 0.01 controls the size of the distortion waves, so smaller values create big smooth warps and larger values create fine noisy jitter. If I want the motion to be slower or faster, I can change t += 0.01 to a smaller or bigger value.
+**How to change things**
+- Distortion strength: adjust the multiplier on dx/dy.
+- Wave scale: adjust noise scale (0.01).
+- Motion speed: change `t += ...`.
+
+### References
+- **Ryoji Ikeda** — data/pixel intensity and minimal visuals
+- **Rafael Rozendaal** — simple generative web visuals and gradients
+- **Casey Reas** — rule-based systems that feel like “living images”
+
+### Algorithmic Thinking
+- Pixels as data:
+  - loop through x/y
+  - compute color from a formula (position + time)
+  - write into the pixel array
+- Distortion as remapping:
+  - for each pixel, sample from a shifted coordinate
+  - noise creates smooth displacement fields
+
+### Reflection
+This week made me realize that even “simple math” can create complex motion when applied to every pixel. I liked how direct pixel manipulation gives a completely different look than drawing shapes, even though it is still rule-based.
 
 ## Week 11 - 14
 
 ### Project work
 
-In weeks 11 to 14, I mainly focused on developing my final project. In week 11, I explored different ideas and thought about what kind of project I wanted to create. Quite early on, I decided to work on a drawing machine, as I had enjoyed creating and experimenting with these systems in the earlier weeks of the course. I started with a first iteration of the project and then continued to refine and develop it over the following weeks. During this time, my focus was mostly on the project itself, while I only made smaller updates to my journal. I will describe the project work and my process in more detail in the Final Project section.
+### Exploration
+In weeks 11 to 14, I mainly focused on developing my final project. I explored different ideas, and then decided quite early to work on a drawing machine, because I enjoyed building these systems in earlier weeks. I started with a first iteration and refined the project across multiple versions, mostly focusing on the final project while making only small journal updates each week.
+
+### References
+My main inspiration for the final project direction was **Jackson Pollock** and the idea of expressive paint splatters / action painting.
+
+### Algorithmic Thinking
+- Final project focus:
+  - build a system that creates variety (unique splatters every time)
+  - keep a strong rule set so it stays coherent
+  - turn parameters into “art controls” (palette, density, drip/bleed behavior)
+
+### Reflection
+Working on one project over multiple weeks showed me how important iteration is. The most convincing results came from testing, failing, and tuning parameters, not from the first attempt.
+
+
 
 ## Final Project
 
 ### Idea
 
-The idea for my final project was to create a generative drawing system that feels similar to paint splatters, combining randomness with a clear underlying structure. I was inspired by abstract painting, especially the work of Jackson Pollock, and by the drawing machine exercise we did during the course. I wanted to build a system that is not just a static image, but an interactive process where each input creates a unique visual result. The goal was to explore how structured algorithms can produce expressive and organic-looking graphics.
+### Idea
+The idea for my final project was to create a generative drawing system that feels similar to paint splatters, combining randomness with a clear underlying structure. I was inspired by abstract painting, especially the work of **Jackson Pollock**, and by the drawing machine exercise we did during the course. I wanted to build a system that is not just a static image, but an interactive process where each input creates a unique visual result.
 
 ### Iterations
 
 I developed the project through several iterations. In the first iteration, I focused only on generating random shapes with random colors to get a feeling for composition, scale, and interaction.
 
 #### First Iteration
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/k3TFG9PRe" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
 
 In the second iteration, I added droplets around the main shapes to simulate paint splattering outward in different directions.
 
 #### Second Iteration
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/rk0-Vrgzv" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
 
 In the third iteration, I refined the splatter system by adding more variation to the droplets and introducing different sizes, directions, and densities.
 
 #### Third Iteration
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/lrSmuTyy7" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
 
 Finally, I extended the system with animated elements such as dripping paint and ink bleeding to create a more realistic and dynamic result.
 
 #### Fourth Iteration
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/gAVFZaKfg" height="450" frameborder="no"></iframe> {% endraw %}
 
 
 
 ### Failures / Excursions
-
-I do not see the problems I encountered as failures, but rather as experiments that helped me understand the limits of the system. At one point, I exaggerated the dripping effect too much, which caused the paint to dominate the entire canvas and destroy the composition. In another experiment, I pushed the bleeding effect too far, so the shapes dissolved into the background. These extreme versions helped me find a balance between realism and control and informed the decisions I made for the final version.
+I do not see the problems I encountered as failures, but rather as experiments that helped me understand the limits of the system. At one point, I exaggerated the dripping effect too much, which caused the paint to dominate the entire canvas and destroy the composition. In another experiment, I pushed the bleeding effect too far, so the shapes dissolved into the background. These extreme versions helped me find a balance between realism and control.
 
 #### First Excursion (Dripping Effect)
 
@@ -293,8 +443,7 @@ I do not see the problems I encountered as failures, but rather as experiments t
 
 
 ### Code Explanation
-
-The project is implemented in p5.js as an interactive generative drawing system. Different keybinds control the behavior of the system: A activates a warm color palette, S a cool palette, D a grayscale/ink palette, and F fully random colors. The C key clears the canvas, P saves the current image as a PNG, while R and B toggle the dripping and bleeding effects on and off.
+The project is implemented in p5.js as an interactive generative drawing system. Different keybinds control the behavior of the system: **A** activates a warm color palette, **S** a cool palette, **D** a grayscale/ink palette, and **F** fully random colors. **C** clears the canvas, **P** saves the current image as a PNG, while **R** and **B** toggle the dripping and bleeding effects on and off.
 
 Whenever a key is pressed, a new splatter is generated. If the mouse is inside the canvas, the splatter appears near the mouse position with a small random offset; otherwise, it is placed at a random location. Each splatter consists of an irregular main blob created using Perlin noise and random rotation, which ensures visual variation. Around the blob, smaller droplets are distributed in biased directions to create a sense of movement.
 
@@ -305,18 +454,17 @@ Some droplets turn into animated drips after a short delay. These drips move dow
 The final graphic is an accumulation of many individual interactions, resulting in a complex composition that feels organic and painterly. Each splatter is unique in shape, size, color, and behavior, yet the overall image remains coherent due to the structured rules of the system. The combination of static splatters, droplets, drips, and subtle bleeding creates depth and motion while maintaining visual balance.
 
 #### Final Project Graphic
-
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/eQseZGzM1" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
 
 ### Project Reflection
-
 I really enjoyed working with drawing machines during the course, and this project was my attempt to create a more sophisticated and expressive version of one. I was especially interested in the tension between randomness and structure, where the system feels unpredictable but is still clearly controlled by rules. The first three iterations of the project were developed independently by me, focusing on shape generation, interaction, and basic splatter behavior. During these early stages, I only used ChatGPT in a limited way, mainly to help with defining color palettes in the code.
 
 After completing the third iteration, I decided to work with ChatGPT to further refine the system and push it toward a more realistic and convincing result. Together, we explored advanced behaviors such as dripping paint, ink bleeding, timing, and parameter tuning. While the conceptual direction, experimentation, and final decisions remained mine, ChatGPT supported me in improving and polishing the implementation. I am very happy with the final outcome and realized through this process how powerful generative computer graphics can be as a creative medium. Overall, this project strengthened my interest in generative systems and confirmed that algorithms can function as expressive artistic tools rather than just technical solutions.
 
+
+
 ## Final Reflection
+For my journal, I used ChatGPT mainly as a support tool to help improve the clarity and structure of my written explanations. I always wrote the text myself first and then used ChatGPT to refine the wording, and I clearly referenced its use in every sketch where AI support was involved. What I really appreciated about this module was that it encouraged me to work with my own code instead of relying on AI to generate everything for me. Over the weeks, I could clearly see my own progress, both in how I structured my sketches and in how confidently I experimented with generative systems.
 
-For my journal, I used ChatGPT mainly as a support tool to help improve the clarity and structure of my written explanations. I always wrote the text myself first and then used ChatGPT to refine the wording, and I clearly referenced its use in every sketch where AI support was involved. What I really appreciated about this module was that it strongly encouraged me to work with my own code instead of relying on AI to generate everything for me. Over the weeks, I could clearly see my own progress, both in how I structured my sketches and in how confidently I experimented with generative systems.
-
-Because I had to work on Tuesday mornings, it was not always possible for me to attend every lecture in person, although I joined online whenever I could. I worked on my journal on a weekly basis and continuously built on ideas from the course. In some weeks, the topics in my journal do not directly match the exact focus of the lecture, which is because I started to follow my own interests more strongly. For example, although clocks were introduced in week 4, I became particularly interested in noise textures at that time and explored them in more depth, while I later developed my clock-based graphic during the self-study week. This approach allowed me to stay motivated and to engage more deeply with topics that genuinely interested me, while still building on the core ideas of the module.
+Because I had to work on Tuesday mornings, it was not always possible for me to attend every lecture in person, although I joined online whenever I could. I worked on my journal on a weekly basis and continuously built on ideas from the course. In some weeks, the topics in my journal do not directly match the exact focus of the lecture, which is because I started to follow my own interests more strongly. For example, although clocks were introduced earlier, I became particularly interested in noise textures at that time and explored them in more depth, while I later developed my clock-based graphic during the self-study week. This approach allowed me to stay motivated and to engage more deeply with topics that genuinely interested me, while still building on the core ideas of the module.
