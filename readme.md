@@ -436,6 +436,14 @@ I developed the project through several iterations. First I made a rough sketch 
 <img src="Journal/images/DrawingFInalProject_Cut.jpeg">
 
 
+#### Quick Keybinds
+Shft + A: warm color palette
+Shft + S: cool color palette
+Shft + D: grayscale / ink palette
+Shft + F: fully random colors
+Shft + C: clear canvas
+Shft + P: save current image as PNG
+
 #### First Iteration
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/k3TFG9PRe" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
@@ -472,7 +480,7 @@ I do not see the problems I encountered as failures, but rather as experiments t
 
 
 ### Code Explanation
-The project is implemented in p5.js as an interactive generative drawing system. Different keybinds control the behavior of the system: **A** activates a warm color palette, **S** a cool palette, **D** a grayscale/ink palette, and **F** fully random colors. **C** clears the canvas, **P** saves the current image as a PNG, while **R** and **B** toggle the dripping and bleeding effects on and off.
+The project is implemented in p5.js as an interactive generative drawing system. Different keybinds control the behavior of the system: **Shft + A** activates a warm color palette, **Shft + S** a cool palette, **Shft + D** a grayscale/ink palette, and **Shft + F** fully random colors. **Shft + C** clears the canvas, **Shft + P** saves the current image as a PNG, while **Shft + R** and **Shft + B** toggle the dripping and bleeding effects on and off.
 
 Whenever a key is pressed, a new splatter is generated. If the mouse is inside the canvas, the splatter appears near the mouse position with a small random offset; otherwise, it is placed at a random location. Each splatter consists of an irregular main blob created using Perlin noise and random rotation, which ensures visual variation. Around the blob, smaller droplets are distributed in biased directions to create a sense of movement.
 
