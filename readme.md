@@ -81,7 +81,6 @@ This week made the sketches feel alive. I realized that interactivity changes th
 
 In week three, I learned how loops and transformations can create patterns. I explored how `translate()` and `rotate()` change the coordinate system, which makes it easier to build complex arrangements. Once I understood that the origin can move and the canvas can rotate, it became much easier to design structured patterns.
 
-#### Drawning 
 
 #### Sketch 1: Starburst Lines
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/czBR9FgVu" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
@@ -95,6 +94,10 @@ In week three, I learned how loops and transformations can create patterns. I ex
 - More lines: increase loop count and adjust rotation angle.
 - Different look: change stroke/background colors.
 - Different lengths: change the line end coordinates.
+
+#### Rough Sketch
+
+
 
 #### Sketch 2: Isometric Cube Grid (Depth Gradient)
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/_7V401ulP" width="80%" height="600" frameborder="no"></iframe> {% endraw %}
