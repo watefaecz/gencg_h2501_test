@@ -287,7 +287,7 @@ I liked that one sketch can produce many outcomes. It made me think more like a 
 In week 8, I developed my clock concept further. I wanted to combine something I personally like (space themes) with the idea of time. I started with Earth in the center, a star background, satellites, and a working digital clock. After the first version worked logically, I upgraded the sketch so time is not only shown, but also drives events in the scene over time. I used ChatGPT as a support tool to help me expand the idea and improve the realism and playfulness of the system, while still controlling the overall direction myself. This led to the final version, where the clock is no longer just displayed, but actively drives what happens in the scene over time.
 
 #### Rough Sketch
-<img src=„images/ClockDrawing_Cut.jpeg“ >
+<img src="Journal/images/ClockDrawing_Cut.jpeg">
 
 #### Failure / Excursion
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/jkBQXY5LO" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
@@ -357,7 +357,7 @@ This checkpoint helped me see that my journal is strongest when I document decis
 By week 10 I felt more confident and started experimenting more freely. I really enjoyed working with pixels because it feels like manipulating the raw material of an image, not just drawing shapes on top. I tried two approaches: a flowing color gradient and a pixel drift distortion.
 
 #### Rough Sketch
-<img src=„images/ColorGradientPicture_Cut.jpeg“ >
+<img src="Journal/images/ColorGradientPicture_Cut.jpeg">
 
 #### Sketch 1: Color Gradient
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/PQveq8zCR" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
@@ -434,7 +434,7 @@ I developed the project through several iterations. First I made a rough sketch 
 
 
 #### Rough Sketch
-<img src=„images/DrawingFInalProject.jpeg“ >
+<img src="Journal/images/DrawingFInalProject_Cut.jpeg">
 
 
 #### First Iteration
