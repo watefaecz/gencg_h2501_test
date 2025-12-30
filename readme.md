@@ -262,7 +262,7 @@ This week I worked on a **parametric face generator**. Because I already had exp
 I rotated and misplaced the facial components (mask, planes, nose, mouth, neck) much more aggressively, and I redesigned the eyes with extreme squashing plus drifting pupils and mismatched geometry. This causes the piece to “fail” as a readable cubist face because the features no longer align like a portrait and the eyes become distorted symbols rather than believable facial anchors.
 
 ### References
-For this week, the visual direction is connected to cubist portrait styles. Possible references to cite:
+For this week, the visual direction is connected to cubist portrait styles.
 - **Pablo Picasso** — cubist faces and fragmented portrait planes
 - **Georges Braque** — early cubism and simplified facial structures
 
