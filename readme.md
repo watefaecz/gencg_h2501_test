@@ -243,10 +243,6 @@ It was helpful to pause and review. I noticed that I prefer systems that are int
 ### Exploration
 This week I worked on a **parametric face generator**. Because I already had experience working with ChatGPT from earlier weeks, I could test ideas faster. Since I understand the code myself, I could decide precisely what to change and what should stay fixed. I used ChatGPT mainly to support structure and refinement, while the concept and experimentation came from my own interests.
 
-#### Failure / Excursion
-{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/nPgPYhxVR" width="100%" height="800" frameborder="no"></iframe> {% endraw %}
-I rotated and misplaced the facial components (mask, planes, nose, mouth, neck) much more aggressively, and I redesigned the eyes with extreme squashing plus drifting pupils and mismatched geometry. This causes the piece to “fail” as a readable cubist face because the features no longer align like a portrait and the eyes become distorted symbols rather than believable facial anchors.
-
 #### Sketch 1: Face Generator
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/0CS0X1UYN" width="100%" height="800" frameborder="no"></iframe> {% endraw %}
 
@@ -260,6 +256,10 @@ I rotated and misplaced the facial components (mask, planes, nose, mouth, neck) 
 - More/less abstraction: adjust random ranges for size/rotation/position.
 - Style: toggle outlines or change stroke weight.
 - Expand vocabulary: add new shapes for eyes/hair/masks.
+
+#### Failure / Excursion
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/nPgPYhxVR" width="100%" height="800" frameborder="no"></iframe> {% endraw %}
+I rotated and misplaced the facial components (mask, planes, nose, mouth, neck) much more aggressively, and I redesigned the eyes with extreme squashing plus drifting pupils and mismatched geometry. This causes the piece to “fail” as a readable cubist face because the features no longer align like a portrait and the eyes become distorted symbols rather than believable facial anchors.
 
 ### References
 For this week, the visual direction is connected to cubist portrait styles. Possible references to cite:
