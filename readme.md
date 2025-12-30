@@ -247,7 +247,9 @@ The final graphic is an accumulation of many individual interactions, resulting 
 
 ### Project Reflection
 
-I really enjoyed working with drawing machines during the course, and this project was my attempt to create a more sophisticated and expressive version of one. I was especially interested in the tension between randomness and structure, where the system feels unpredictable but is still clearly controlled by rules. Through this project, I learned how small parameter changes can have a big impact on the visual outcome and how important iteration is in generative design. Overall, this project helped me better understand how algorithms can be used as creative tools rather than just technical solutions.
+I really enjoyed working with drawing machines during the course, and this project was my attempt to create a more sophisticated and expressive version of one. I was especially interested in the tension between randomness and structure, where the system feels unpredictable but is still clearly controlled by rules. The first three iterations of the project were developed independently by me, focusing on shape generation, interaction, and basic splatter behavior. During these early stages, I only used ChatGPT in a limited way, mainly to help with defining color palettes in the code.
+
+After completing the third iteration, I decided to work with ChatGPT to further refine the system and push it toward a more realistic and convincing result. Together, we explored advanced behaviors such as dripping paint, ink bleeding, timing, and parameter tuning. While the conceptual direction, experimentation, and final decisions remained mine, ChatGPT supported me in improving and polishing the implementation. I am very happy with the final outcome and realized through this process how powerful generative computer graphics can be as a creative medium. Overall, this project strengthened my interest in generative systems and confirmed that algorithms can function as expressive artistic tools rather than just technical solutions.
 
 ## Final Reflection
 
