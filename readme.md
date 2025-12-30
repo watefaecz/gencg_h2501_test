@@ -81,6 +81,7 @@ This week made the sketches feel alive. I realized that interactivity changes th
 
 In week three, I learned how loops and transformations can create patterns. I explored how `translate()` and `rotate()` change the coordinate system, which makes it easier to build complex arrangements. Once I understood that the origin can move and the canvas can rotate, it became much easier to design structured patterns.
 
+### Starburst Lines
 
 #### Sketch 1: Starburst Lines
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/czBR9FgVu" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
@@ -95,9 +96,15 @@ In week three, I learned how loops and transformations can create patterns. I ex
 - Different look: change stroke/background colors.
 - Different lengths: change the line end coordinates.
 
+**Failure** 
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/hEFdOCVFB" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
+I moved the origin to a corner-ish position and drew each line from an offset start point instead of (0,0), plus I changed the rotation step from PI/4 to PI/6. This makes the “burst” fail because the lines no longer converge in the center and the angles don’t evenly distribute, so it looks like a weird off-center spiral rather than a symmetric starburst.
+
+
+### Isometric Cubes
+
 #### Rough Sketch
 <img src=„images/IsometricCubesDrawing.jpeg“ >
-
 
 #### Sketch 2: Isometric Cube Grid (Depth Gradient)
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/_7V401ulP" width="80%" height="600" frameborder="no"></iframe> {% endraw %}
@@ -272,6 +279,12 @@ In week 8, I developed my clock concept further. I wanted to combine something I
 
 #### Rough Sketch
 <img src=„images/ClockDrawing_Cut.jpeg“ >
+
+#### Failure / Excursion
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/jkBQXY5LO" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
+
+I set the satellite orbit radius to be smaller than the Earth radius (so they fly “inside” the planet) and I changed the clock timezone from Europe/Zurich to UTC. This fails because the satellites no longer clearly orbit around Earth and the displayed time is not Zurich time, even though the scene still looks like an Earth clock.
+
 
 #### Sketch 1: Clock Graphic 
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/QvxOEfCyk" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
