@@ -52,6 +52,11 @@ In the second week I learned how to make sketches respond to input like mouse pr
 #### Sketch 2: Bouncing Ball
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/zkZ3TfS1_" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
 
+
+#### Failure / Excursion
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/LUEE0Ozbm" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
+I used a single noise value for both x and y, and I also scaled/offset it so the circle sometimes goes outside the canvas. This breaks the intended smooth 2D wandering because the motion collapses into a predictable diagonal path with frequent edge clipping instead of exploring the full area, and I found it really interesting to test around with the bouncing ball because you can really manipulate physics.
+
 **What it does**
 - A circle moves by adding velocity (vx, vy) to position (x, y) each frame.
 - If the circle reaches a canvas edge, the velocity direction flips.
