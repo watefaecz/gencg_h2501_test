@@ -437,12 +437,12 @@ I developed the project through several iterations. First I made a rough sketch 
 
 
 #### Quick Keybinds
-Shft + A: warm color palette
-Shft + S: cool color palette
-Shft + D: grayscale / ink palette
-Shft + F: fully random colors
-Shft + C: clear canvas
-Shft + P: save current image as PNG
+- Shft + A: warm color palette
+- Shft + S: cool color palette
+- Shft + D: grayscale / ink palette
+- Shft + F: fully random colors
+- Shft + C: clear canvas
+- Shft + P: save current image as PNG
 
 #### First Iteration
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/k3TFG9PRe" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
