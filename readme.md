@@ -221,11 +221,11 @@ I do not see the problems I encountered as failures, but rather as experiments t
 
 #### First Excursion (Dripping Effect)
 
-{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/NROVmDGpA" height="450" frameborder="no"></iframe> {% endraw %}
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/NROVmDGpA" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
 #### Second Excursion (Bleed Effect)
 
-{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/VZzVet2x-" height="450" frameborder="no"></iframe> {% endraw %}
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/VZzVet2x-" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
 
 ### Code Explanation
@@ -242,7 +242,7 @@ The final graphic is an accumulation of many individual interactions, resulting 
 
 #### Final Project Graphic
 
-{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/eQseZGzM1" height="450" frameborder="no"></iframe> {% endraw %}
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/eQseZGzM1" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
 
 ### Project Reflection
