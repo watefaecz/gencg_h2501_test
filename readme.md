@@ -185,12 +185,69 @@ In weeks 11 to 14, I mainly focused on developing my final project. In week 11, 
 
 ### Idea
 
+The idea for my final project was to create a generative drawing system that feels similar to paint splatters, combining randomness with a clear underlying structure. I was inspired by abstract painting, especially the work of Jackson Pollock, and by the drawing machine exercise we did during the course. I wanted to build a system that is not just a static image, but an interactive process where each input creates a unique visual result. The goal was to explore how structured algorithms can produce expressive and organic-looking graphics.
+
+### Iterations
+
+I developed the project through several iterations. In the first iteration, I focused only on generating random shapes with random colors to get a feeling for composition, scale, and interaction.
+
+#### First Iteration
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/k3TFG9PRe" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+In the second iteration, I added droplets around the main shapes to simulate paint splattering outward in different directions.
+
+#### Second Iteration
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/rk0-Vrgzv" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+In the third iteration, I refined the splatter system by adding more variation to the droplets and introducing different sizes, directions, and densities.
+
+#### Third Iteration
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/lrSmuTyy7" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
+
+Finally, I extended the system with animated elements such as dripping paint and ink bleeding to create a more realistic and dynamic result.
+
+#### Fourth Iteration
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/gAVFZaKfg" height="450" frameborder="no"></iframe> {% endraw %}
+
+
+
 ### Failures / Excursions
+
+I do not see the problems I encountered as failures, but rather as experiments that helped me understand the limits of the system. At one point, I exaggerated the dripping effect too much, which caused the paint to dominate the entire canvas and destroy the composition. In another experiment, I pushed the bleeding effect too far, so the shapes dissolved into the background. These extreme versions helped me find a balance between realism and control and informed the decisions I made for the final version.
+
+#### First Excursion (Dripping Effect)
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/NROVmDGpA" height="450" frameborder="no"></iframe> {% endraw %}
+
+#### Second Excursion (Bleed Effect)
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/VZzVet2x-" height="450" frameborder="no"></iframe> {% endraw %}
+
+
+### Code Explanation
+
+The project is implemented in p5.js as an interactive generative drawing system. Different keybinds control the behavior of the system: A activates a warm color palette, S a cool palette, D a grayscale/ink palette, and F fully random colors. The C key clears the canvas, P saves the current image as a PNG, while R and B toggle the dripping and bleeding effects on and off.
+
+Whenever a key is pressed, a new splatter is generated. If the mouse is inside the canvas, the splatter appears near the mouse position with a small random offset; otherwise, it is placed at a random location. Each splatter consists of an irregular main blob created using Perlin noise and random rotation, which ensures visual variation. Around the blob, smaller droplets are distributed in biased directions to create a sense of movement.
+
+Some droplets turn into animated drips after a short delay. These drips move downward, slightly rotate, and gradually become thinner and more transparent, simulating drying paint. In addition, an ink bleed effect causes the paint to softly spread into the background, imitating absorption by paper. All elements accumulate over time on the canvas, reinforcing the idea of a drawing machine rather than a traditional brush tool.
 
 ### Final Graphic
 
+The final graphic is an accumulation of many individual interactions, resulting in a complex composition that feels organic and painterly. Each splatter is unique in shape, size, color, and behavior, yet the overall image remains coherent due to the structured rules of the system. The combination of static splatters, droplets, drips, and subtle bleeding creates depth and motion while maintaining visual balance.
+
+#### Final Project Graphic
+
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/eQseZGzM1" height="450" frameborder="no"></iframe> {% endraw %}
+
+
 ### Project Reflection
 
+I really enjoyed working with drawing machines during the course, and this project was my attempt to create a more sophisticated and expressive version of one. I was especially interested in the tension between randomness and structure, where the system feels unpredictable but is still clearly controlled by rules. Through this project, I learned how small parameter changes can have a big impact on the visual outcome and how important iteration is in generative design. Overall, this project helped me better understand how algorithms can be used as creative tools rather than just technical solutions.
 
 ## Final Reflection
 
