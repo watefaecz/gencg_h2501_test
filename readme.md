@@ -97,6 +97,7 @@ In week three, I learned how loops and transformations can create patterns. I ex
 - Different lengths: change the line end coordinates.
 
 **Failure** 
+
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/hEFdOCVFB" width="55%" height="425" frameborder="no"></iframe> {% endraw %}
 I moved the origin to a corner-ish position and drew each line from an offset start point instead of (0,0), plus I changed the rotation step from PI/4 to PI/6. This makes the “burst” fail because the lines no longer converge in the center and the angles don’t evenly distribute, so it looks like a weird off-center spiral rather than a symmetric starburst.
 
