@@ -426,7 +426,7 @@ In the third iteration, I refined the splatter system by adding more variation t
 Finally, I extended the system with animated elements such as dripping paint and ink bleeding to create a more realistic and dynamic result.
 
 #### Fourth Iteration
-{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/gAVFZaKfg" height="450" frameborder="no"></iframe> {% endraw %}
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/gAVFZaKfg" width="100%" height="450" frameborder="no"></iframe> {% endraw %}
 
 
 
