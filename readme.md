@@ -289,11 +289,6 @@ In week 8, I developed my clock concept further. I wanted to combine something I
 #### Rough Sketch
 <img src="Journal/images/ClockDrawing_Cut.jpeg">
 
-#### Failure / Excursion
-{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/jkBQXY5LO" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
-I set the satellite orbit radius to be smaller than the Earth radius (so they fly “inside” the planet) and I changed the clock timezone from Europe/Zurich to UTC. This fails because the satellites no longer clearly orbit around Earth and the displayed time is not Zurich time, even though the scene still looks like an Earth clock.
-
-
 #### Sketch 1: Clock Graphic 
 {% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/QvxOEfCyk" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
 
@@ -315,6 +310,10 @@ I created this sketch as a first working version of my clock idea, and I was alr
 - Persistence: remove the hourly reset so craters accumulate.
 - Mood: change colors for stars, Earth, satellites, craters.
 - Complexity: adjust number/speed of satellites and particles.
+
+#### Failure / Excursion
+{% raw %} <iframe src="https://editor.p5js.org/lukas01werner/full/jkBQXY5LO" width="110%" height="650" frameborder="no"></iframe> {% endraw %}
+I set the satellite orbit radius to be smaller than the Earth radius (so they fly “inside” the planet) and I changed the clock timezone from Europe/Zurich to UTC. This fails because the satellites no longer clearly orbit around Earth and the displayed time is not Zurich time, even though the scene still looks like an Earth clock.
 
 ### References
 I did not follow one specific artwork here. The main idea came from my own interests (space).
